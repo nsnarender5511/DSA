@@ -5,11 +5,11 @@ int cnt = 0;
 vector<int> dp(10001, -1);
 
 int solve(int n, vector<int> houses, int curr){
-	cout<<cnt++<<" ";
+	//cout<<cnt++<<" ";
 	if(curr == n) return 0;
 	if(curr == n-1) return houses[n-1];
 
-	//if(dp[curr] != -1) return dp[curr];
+	if(dp[curr] != -1) return dp[curr];
 
 	return dp[curr] = max((houses[curr] + solve(n,houses,curr+2)),  solve(n, houses, curr+1));
 
